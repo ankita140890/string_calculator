@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe StringCalculator, type: :model do
-  let(:calculator) { StringCalculator.new }
+RSpec.describe StringCalc, type: :model do
+  let(:calculator) { StringCalc.new }
 
   describe '#add' do
     it 'returns 0 for an empty string' do
