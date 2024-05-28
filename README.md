@@ -1,42 +1,53 @@
-# README
+# String Calculator Rails App
 
-String Calculator - Ruby on Rails APP
+This is a simple Rails application that provides an API endpoint to perform addition on a string of numbers using a customizable delimiter. The `StringCalc` service class implements the string calculator functionality, and the `CalculatorsController` exposes the functionality via a web interface.
 
-* Overview
+## Features
 
-  String Calculator is a simple web application built with Ruby on Rails that allows users to add any amount of numbers. This README provides instructions on setting up and running the Ruby on Rails backend of string calculator.
+1. **Basic Addition**: Add up to two numbers separated by a comma.
+2. **Unknown Amount of Numbers**: Handle an unknown number of numbers.
+3. **New Line Delimiter**: Handle new lines between numbers as well as commas.
+4. **Custom Delimiters**: Support different delimiters specified in the format `//[delimiter]\n`.
+5. **Negative Numbers**: Throw an exception if negative numbers are included.
+6. **Ignore Large Numbers**: Ignore numbers greater than 1000.
+7. **Delimiters of Any Length**: Support delimiters of any length.
+8. **Multiple Delimiters**: Support multiple delimiters.
+9. **Long Multiple Delimiters**: Handle multiple delimiters with length longer than one character.
 
-* Setup Instructions
+## Getting Started
 
-  * Prerequisites
+### Prerequisites
 
-    Make sure you have the following installed:
+- Ruby (version 3.0.0)
+- Rails (version 6.1.7)
 
-      * Ruby (version 3.0.0)
-      * Rails (version 6.1.7)
-      * PostgreSQL or MySQL database
+### Installation
 
-* Installation
+1. **Clone the repository**:
 
-  1) Clone this repository to your local machine.
+    ```bash
+    git clone https://github.com/ankita140890/string_calculator.git
+    cd string_calculator
+    ```
 
-      git clone <repository-url>
+2. **Install dependencies**:
 
-  2) Navigate to the project directory.
+    ```bash
+    bundle install
+    ```
 
-      cd string_calculator
+3. **Set up the database**:
 
-  3) Install dependencies.
+    If you have a database setup, run:
 
-      bundle install
+    ```bash
+    rails db:create
+    rails db:migrate
+    ```
 
-  4) Set up the database
+### Running the Application
 
-      rails db:create
-      rails db:migrate
+Start the Rails server:
 
-* Running the Server
-
-  Start the Rails server: rails s
-
-  The API server will start running at http://localhost:3000
+```bash
+rails server
