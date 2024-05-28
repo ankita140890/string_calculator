@@ -47,5 +47,9 @@ RSpec.describe StringCalc, type: :model do
     it "supports delimiters of any length" do
       expect(calculator.add("//[***]\n1***2***3")).to eq(6)
     end
+
+    it "supports multiple delimiters" do
+      expect(calculator.add("//[*][%][;]\n1*2%3;5")).to eq(11)
+    end
   end
 end
