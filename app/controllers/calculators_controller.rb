@@ -4,10 +4,17 @@ class CalculatorsController < ApplicationController
 
   def calculate
     begin
-      @result = StringCalc.add(params[:numbers])
+      @result = StringCalc.add(sanitize_newline_params)
     rescue => e
       @error = e.message
     end
     render :index
   end
+
+  private
+
+  def sanitize_newline_params
+    params[:numbers].gsub("\\n", "\n")
+  end
+
 end
